@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .on-button {
+            border: none;
+            padding: 12px 18px;
+            margin-right: 10px;
+            border-radius: 8px;
+            font-family: Arial;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .off-button {
+            background-color: black;
+            color: white;
+        }
+    </style>
+
+    <button class="js-on-button on-button" onclick="
+        toggleOnOff('Gaming')
+    ">
+        Gaming
+    </button>
+
+    <button class="js-music-on-button on-button" onclick="
+        toggleOnOff('Music')
+    ">
+        Music
+    </button>
+
+    <button class="js-tech-on-button on-button" onclick="
+        toggleOnOff()
+    ">
+        Tech
+    </button>
+
+    <script>
+        function toggleOnOff(button) {
+            
+            let buttonElement = ''
+
+            if (button === 'Gaming') {
+                buttonElement = document.querySelector('.js-on-button')
+            } else if (button === 'Music') {
+                buttonElement = document.querySelector('.js-music-on-button')
+            } else {
+                buttonElement = document.querySelector('.js-tech-on-button')
+            }
+
+            if (!(buttonElement.classList.contains('off-button'))) {
+                buttonElement.classList.add('off-button')
+                } else {
+                    buttonElement.classList.remove('off-button')
+                }
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+    /*
+    const product = {
+        name: 'socks',
+        'delivery-time': '1 day',
+        rating: {
+            stars: 4.5,
+            count: 87
+        },
+
+        fun: function function1() {
+            console.log('function inside object')
+        }
+
+        fun() {
+            console.log('function inside object')
+        }
+    
+    };
+
+    console.log(product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'Rocks'
+    console.log(product);
+
+    console.log(product['delivery-time']);
+    console.log(product.rating['stars']);
+    product.fun();
+
+    console.log(JSON.stringify(product));
+
+    const jsonString = JSON.stringify(product)
+
+    console.log(JSON.parse(jsonString))
+
+    product.fun()
+    */
+
+    let product1 = {
+        name: 'basketball',
+        price: 2095
+    }
+
+    let product2 = {
+        name: 'soccer-ball',
+        price: 3000
+    }
+
+    console.log(product1)
+
+    product1.price += 500
+
+    console.log(product1)
+
+    product1['delivery-time'] = '3 days'
+
+    console.log(product1)
+
+    function comparePrice(product1, product2) {
+        if (product1.price > product2.price) {
+            return product2
+        }
+    
+        return product1
+    }
+    
+    console.log(comparePrice(product1,product2).name + " is less expensive")
+
+
+</script>
+
+</html>

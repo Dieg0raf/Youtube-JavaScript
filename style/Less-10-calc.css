@@ -1,0 +1,31 @@
+body {
+    font-family: Arial;
+    color: white;
+    background-color: black;
+}
+
+.button {
+    height: 45px;
+    width: 45px;
+    border-radius: 30px;
+    border: none;
+    background-color: rgb(61, 61, 61);
+    color: white;
+    font-size: 15px;
+    margin-right: 2px;
+    margin-bottom: 10px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.button-sym {
+    background-color: orange;
+}
+
+.calculations {
+    font-size: 30px;
+    margin: 0;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-left: 5px;
+}

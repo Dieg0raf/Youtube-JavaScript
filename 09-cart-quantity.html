@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables</title>
+</head>
+<body>
+    <button onclick="
+        console.log(`Cart Quantity: ${cartQuantity}`)
+        ">
+        Show Quantity 
+    </button>
+
+    <button onclick="
+        calculateQuantity(1)
+    ">
+        Add to cart
+    </button>
+
+    <button onclick="
+        calculateQuantity(2)
+    ">
+        +2
+    </button>
+
+    <button onclick="
+        calculateQuantity(3)
+    ">
+        +3
+    </button>
+
+    <button onclick="
+        calculateQuantity(-2)
+    ">
+        -2
+    </button>
+
+    <button onclick="
+        calculateQuantity(-3)
+    ">
+        -3
+    </button>
+
+    <button onclick="
+    cartQuantity = 0
+    console.log('Reset cart')
+    console.log(`Cart Quantity: ${cartQuantity}`)
+    ">
+        Reset Cart
+    </button>
+
+    <p class="js-show-cart"></p>
+
+    <p class="js-message"></p>
+
+<script>
+    let cartQuantity = JSON.parse(localStorage.getItem('cart-quantity')) || 0
+    let quantityElement = document.querySelector('.js-show-cart')
+
+    quantityElement.innerHTML = `Cart Quantity: ${cartQuantity}`
+
+    function calculateQuantity(quantity) {
+        let messageElement = document.querySelector('.js-message')
+        if (quantity > 0) {
+            if (!(cartQuantity + quantity > 10)) {
+                cartQuantity += quantity;
+                quantityElement.innerHTML = `Cart Quantity: ${cartQuantity}`
+            } else {
+                messageElement.innerHTML = 'ERROR Cart is going to exceed 10'
+            }
+        } else {
+            if (!(cartQuantity + quantity < 0)) {
+                cartQuantity += quantity;
+                quantityElement.innerHTML = `Cart Quantity: ${cartQuantity}`
+            } else {
+                messageElement.innerHTML = 'ERROR Not enough items'
+            }
+        }
+
+        localStorage.setItem('cart-quantity', JSON.stringify(cartQuantity))
+    }
+</script>
+</body>
+</html>
